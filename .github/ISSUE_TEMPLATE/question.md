@@ -1,6 +1,6 @@
 ---
-name: 질문
-about: "다른 파트에 묻는 질문 — 우리 서비스의 '내가 답해야 할 것' 추출 대상"
+name: 질문 (다른 파트에 묻기)
+about: 다른 파트에 묻는 질문. 우리 서비스가 답해야 할 것을 추출하는 대상입니다.
 title: "[질문] "
 labels: "type:question"
 assignees: ""
