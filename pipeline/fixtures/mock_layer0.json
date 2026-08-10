@@ -1,0 +1,264 @@
+{
+  "project": {
+    "id": "proj_neomeo_demo",
+    "name": "Neomeo Demo Project",
+    "repo": "neomeo-org/neomeo-app"
+  },
+  "teams": [
+    {
+      "team_id": "team_seoul",
+      "name": "Seoul",
+      "timezone": "Asia/Seoul",
+      "work_end_local": "19:00",
+      "language": "ko"
+    },
+    {
+      "team_id": "team_berlin",
+      "name": "Berlin",
+      "timezone": "Europe/Berlin",
+      "work_end_local": "18:00",
+      "language": "en"
+    },
+    {
+      "team_id": "team_sf",
+      "name": "San Francisco",
+      "timezone": "America/Los_Angeles",
+      "work_end_local": "18:00",
+      "language": "en"
+    }
+  ],
+  "members": [
+    {
+      "handle": "jieun_k",
+      "name": "Jieun Kim",
+      "team_id": "team_seoul",
+      "owned_paths": [
+        "src/api/",
+        "src/db/"
+      ]
+    },
+    {
+      "handle": "minho_p",
+      "name": "Minho Park",
+      "team_id": "team_seoul",
+      "owned_paths": [
+        "src/auth/"
+      ]
+    },
+    {
+      "handle": "lena_s",
+      "name": "Lena Schmidt",
+      "team_id": "team_berlin",
+      "owned_paths": [
+        "src/ui/",
+        "src/components/"
+      ]
+    },
+    {
+      "handle": "tobias_w",
+      "name": "Tobias Wagner",
+      "team_id": "team_berlin",
+      "owned_paths": [
+        "src/api/"
+      ]
+    },
+    {
+      "handle": "sam_r",
+      "name": "Sam Rivera",
+      "team_id": "team_sf",
+      "owned_paths": [
+        "src/infra/",
+        "src/db/"
+      ]
+    }
+  ],
+  "window": {
+    "team_id": "team_seoul",
+    "start_utc": "2026-08-08T00:00:00Z",
+    "end_utc": "2026-08-08T10:00:00Z",
+    "note": "Seoul 팀의 하루 끝(KST 19:00 = UTC 10:00) 기준 요약 경계"
+  },
+  "commits": [
+    {
+      "sha": "a1b2c3d",
+      "author": "jieun_k",
+      "timestamp": "2026-08-08T02:15:00Z",
+      "message": "feat: add pagination to /api/summaries endpoint",
+      "file_paths": [
+        "src/api/summaries.py",
+        "src/api/schemas.py"
+      ],
+      "url": "https://github.com/neomeo-org/neomeo-app/commit/a1b2c3d"
+    },
+    {
+      "sha": "e4f5g6h",
+      "author": "tobias_w",
+      "timestamp": "2026-08-08T05:40:00Z",
+      "message": "refactor: change response shape of /api/summaries",
+      "file_paths": [
+        "src/api/summaries.py"
+      ],
+      "url": "https://github.com/neomeo-org/neomeo-app/commit/e4f5g6h"
+    },
+    {
+      "sha": "i7j8k9l",
+      "author": "minho_p",
+      "timestamp": "2026-08-08T06:05:00Z",
+      "message": "fix: session token expiry check off-by-one",
+      "file_paths": [
+        "src/auth/session.py"
+      ],
+      "url": "https://github.com/neomeo-org/neomeo-app/commit/i7j8k9l"
+    }
+  ],
+  "threads": [
+    {
+      "thread_id": "pr_101_review",
+      "type": "pr",
+      "number": 101,
+      "title": "feat: add pagination to /api/summaries endpoint",
+      "url": "https://github.com/neomeo-org/neomeo-app/pull/101",
+      "author": "jieun_k",
+      "file_paths": [
+        "src/api/summaries.py",
+        "src/api/schemas.py"
+      ],
+      "created_at": "2026-08-08T02:20:00Z",
+      "mentioned_handles": [
+        "tobias_w"
+      ],
+      "requested_reviewers": [
+        "tobias_w",
+        "sam_r"
+      ],
+      "comments": [
+        {
+          "author": "jieun_k",
+          "timestamp": "2026-08-08T02:20:00Z",
+          "type": "comment",
+          "body": "@tobias_w 페이지네이션 응답 스키마 리뷰 부탁드려요. 기존 /api/summaries 쓰던 쪽이랑 충돌 없는지 확인 필요합니다."
+        },
+        {
+          "author": "sam_r",
+          "timestamp": "2026-08-08T03:10:00Z",
+          "type": "reaction",
+          "body": "👍"
+        }
+      ],
+      "note": "tobias_w는 멘션 대상인데 텍스트 코멘트 없음 -> 미응답. sam_r은 리뷰어 지정인데 리액션만 남김 -> 미응답."
+    },
+    {
+      "thread_id": "pr_101_approve_thread",
+      "type": "pr",
+      "number": 101,
+      "title": "feat: add pagination to /api/summaries endpoint",
+      "url": "https://github.com/neomeo-org/neomeo-app/pull/101",
+      "author": "jieun_k",
+      "file_paths": [
+        "src/api/summaries.py",
+        "src/api/schemas.py"
+      ],
+      "created_at": "2026-08-08T02:20:00Z",
+      "mentioned_handles": [],
+      "requested_reviewers": [],
+      "comments": [
+        {
+          "author": "sam_r",
+          "timestamp": "2026-08-08T03:11:00Z",
+          "type": "approve_no_comment",
+          "body": null
+        }
+      ],
+      "note": "코멘트 없는 Approve는 응답으로 불인정 (보수적 판정 원칙)"
+    },
+    {
+      "thread_id": "pr_102_review",
+      "type": "pr",
+      "number": 102,
+      "title": "refactor: change response shape of /api/summaries",
+      "url": "https://github.com/neomeo-org/neomeo-app/pull/102",
+      "author": "tobias_w",
+      "file_paths": [
+        "src/api/summaries.py"
+      ],
+      "created_at": "2026-08-08T05:45:00Z",
+      "mentioned_handles": [
+        "jieun_k"
+      ],
+      "requested_reviewers": [
+        "jieun_k"
+      ],
+      "comments": [
+        {
+          "author": "tobias_w",
+          "timestamp": "2026-08-08T05:45:00Z",
+          "type": "comment",
+          "body": "@jieun_k PR #101이랑 같은 파일 건드리는 리팩터링이라 응답 형식이 바뀝니다. summaries 응답 필드명 snake_case로 통일했어요, 확인 부탁드려요."
+        },
+        {
+          "author": "jieun_k",
+          "timestamp": "2026-08-08T06:30:00Z",
+          "type": "comment",
+          "body": "확인했습니다! 제 PR #101 머지 전에 필드명 맞춰서 다시 올릴게요."
+        }
+      ],
+      "note": "jieun_k가 텍스트 코멘트로 응답함 -> 응답 완료. 단, PR #101과 파일 경로(src/api/summaries.py) 겹침 -> B-004 대상."
+    },
+    {
+      "thread_id": "issue_55_discussion",
+      "type": "issue",
+      "number": 55,
+      "title": "세션 만료 시간 계산 오류 의심",
+      "url": "https://github.com/neomeo-org/neomeo-app/issues/55",
+      "author": "lena_s",
+      "file_paths": [
+        "src/auth/session.py"
+      ],
+      "created_at": "2026-08-08T04:00:00Z",
+      "mentioned_handles": [
+        "minho_p"
+      ],
+      "requested_reviewers": [],
+      "comments": [
+        {
+          "author": "lena_s",
+          "timestamp": "2026-08-08T04:00:00Z",
+          "type": "comment",
+          "body": "@minho_p 세션 만료가 1분 일찍 되는 것 같아요. off-by-one 의심됩니다, 확인 가능하신가요?"
+        },
+        {
+          "author": "minho_p",
+          "timestamp": "2026-08-08T06:05:00Z",
+          "type": "comment",
+          "body": "네 맞습니다, 커밋 i7j8k9l에서 수정했어요. session.py expiry 비교 연산자 <= 로 변경했습니다."
+        }
+      ],
+      "note": "minho_p 응답 완료 + 실제 커밋으로 조치함"
+    },
+    {
+      "thread_id": "pr_103_review",
+      "type": "pr",
+      "number": 103,
+      "title": "style: unify button spacing in summary card component",
+      "url": "https://github.com/neomeo-org/neomeo-app/pull/103",
+      "author": "lena_s",
+      "file_paths": [
+        "src/components/SummaryCard.tsx"
+      ],
+      "created_at": "2026-08-08T07:00:00Z",
+      "mentioned_handles": [],
+      "requested_reviewers": [
+        "tobias_w"
+      ],
+      "comments": [
+        {
+          "author": "tobias_w",
+          "timestamp": "2026-08-08T07:20:00Z",
+          "type": "comment",
+          "body": "lgtm"
+        }
+      ],
+      "note": "저정보 코멘트('lgtm') 예시 - 노이즈 필터링 대상이지만 응답 자체는 유효(텍스트 코멘트 존재)"
+    }
+  ]
+}
