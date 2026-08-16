@@ -28,5 +28,9 @@ Rules:
    (code/feature changes, bug fixes, etc). "decision" describes a choice made
    among alternatives or a conclusion reached after discussion (e.g. a technical
    choice, a policy decision). Classify each item as one or the other.
+9. If a thread has state_changed_in_window set to true, its PR/issue changed
+   state (e.g. merged, closed) within this window. This is exactly the kind of
+   fact teammates want to know, so make sure it is reflected in a summary item
+   (e.g. "PR #101 was merged").
 
 Output must strictly follow the given JSON schema.

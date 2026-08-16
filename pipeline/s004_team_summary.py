@@ -57,11 +57,16 @@ def generate_team_summary(
     team_id: str,
     language: str = "ko",
     layer0: dict | None = None,
+    context: dict | None = None,
     model: str = DEFAULT_MODEL,
 ) -> dict:
+    """context를 직접 넘기면(BE DB 연동 경로, db_context_builder 참고) mock layer0를
+    거치지 않는다. context는 {"window": {...}, "commits": [...], "threads": [...]} 형태여야
+    한다 — window는 메타데이터 표기용이라 실제 필터링에는 쓰이지 않는다."""
     load_dotenv()
-    layer0 = layer0 or load_layer0()
-    context = build_team_window_context(layer0, team_id)
+    if context is None:
+        layer0 = layer0 or load_layer0()
+        context = build_team_window_context(layer0, team_id)
 
     metadata = {"window": context["window"], "activity_counts": activity_counts(context)}
     # 미응답 질문은 B-003이 코드로 이미 판정한 결과를 그대로 붙인다 (LLM 관여 없음).
