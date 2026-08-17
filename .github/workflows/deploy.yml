@@ -1,0 +1,17 @@
+name: Deploy to server
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, semo3]
+    steps:
+      - name: Pull & deploy
+        run: |
+          set -e
+          cd ~/project/neomeo-ai
+          git pull origin main
+          bash deploy.sh
