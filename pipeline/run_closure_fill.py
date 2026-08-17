@@ -19,7 +19,10 @@ BE 워커처럼 계속 도는 루프로 동작한다 (기본: 2분 간격. BE보
 """
 import argparse
 import os
+import sys
 import time
+
+sys.stdout.reconfigure(encoding="utf-8")
 
 from dotenv import load_dotenv
 from sqlalchemy import create_engine, text

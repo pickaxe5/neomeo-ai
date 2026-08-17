@@ -40,12 +40,12 @@ _WINDOW_EVENTS_SQL = text(
 
 # 스레드 root는 프로젝트 전체에서 찾는다 (":created" 행이 이번 윈도우 밖일 수 있어서).
 _ROOTS_SQL = text(
-    """
+    r"""
     SELECT type, github_id, actor_handle, title, body, url, state, raw_payload, gh_created_at
     FROM raw_events
     WHERE project_id = :project_id
       AND type IN ('PR', 'ISSUE')
-      AND github_id LIKE '%:created'
+      AND github_id LIKE '%\:created'
     """
 )
 
