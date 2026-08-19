@@ -99,3 +99,33 @@ BRIEFING_EXPLANATION_SCHEMA = {
         "additionalProperties": False,
     },
 }
+
+# 팀 진행 상황(브리핑 3단계) 개인화: 같은 team_card를 역할·담당 영역이 다른 여러
+# 사람에게 각자 다르게 풀어쓴다. 사실은 team_card가 이미 확정했으므로 LLM은
+# "어떤 항목이 이 사람에게 왜 중요한지"를 고르고 설명하는 역할만 한다.
+PERSONAL_PROGRESS_SCHEMA = {
+    "name": "personal_progress_summaries",
+    "strict": True,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "summaries": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "id": {"type": "string", "description": "입력으로 준 id를 그대로 사용"},
+                        "why_it_matters": {
+                            "type": "string",
+                            "description": "이 팀 진행 상황이 역할·담당 영역·기획 의도 관점에서 이 사람에게 왜 중요한지 2~4문장",
+                        },
+                    },
+                    "required": ["id", "why_it_matters"],
+                    "additionalProperties": False,
+                },
+            },
+        },
+        "required": ["summaries"],
+        "additionalProperties": False,
+    },
+}
